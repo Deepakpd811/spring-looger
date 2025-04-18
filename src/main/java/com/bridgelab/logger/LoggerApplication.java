@@ -2,6 +2,7 @@ package com.bridgelab.logger;
 
 
 import com.bridgelab.logger.component.DemoBean;
+import com.bridgelab.logger.component.EmployeeBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -23,6 +24,19 @@ public class LoggerApplication {
         logger.debug("\nChecking Context: {}", context.getBean(DemoBean.class));
 
         logger.debug("\n*** Example Using @Autowired annotation on property ***");
+
+        // get employee bean
+
+        EmployeeBean emp = context.getBean(EmployeeBean.class);
+        emp.setEid(101);
+        emp.setEname("Deepak");
+        emp.showDetails();
+
+
+
+
+
+
     }
 
 
